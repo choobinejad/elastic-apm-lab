@@ -1,0 +1,90 @@
+version: '3.5'
+
+services:
+
+  addition-service:
+    image: addition-service:latest
+    ports:
+      - "5001:5001"
+    networks:
+      - mathnet
+    secrets:
+      - source: apm-secret-token
+        target: apm-secret-token
+        mode: 0400
+      - source: apm-server-url
+        target: apm-server-url
+        mode: 0400
+
+  subtraction-service:
+    image: subtraction-service:latest
+    ports:
+      - "5002:5002"
+    networks:
+      - mathnet
+    secrets:
+      - source: apm-secret-token
+        target: apm-secret-token
+        mode: 0400
+      - source: apm-server-url
+        target: apm-server-url
+        mode: 0400
+
+  multiplication-service:
+    image: multiplication-service:latest
+    ports:
+      - "5003:5003"
+    networks:
+      - mathnet
+    secrets:
+      - source: apm-secret-token
+        target: apm-secret-token
+        mode: 0400
+      - source: apm-server-url
+        target: apm-server-url
+        mode: 0400
+
+  division-service:
+    image: division-service:latest
+    ports:
+      - "5004:5004"
+    networks:
+      - mathnet
+    secrets:
+      - source: apm-secret-token
+        target: apm-secret-token
+        mode: 0400
+      - source: apm-server-url
+        target: apm-server-url
+        mode: 0400
+
+  math-service:
+    image: math-service:latest
+    ports:
+      - "5000:5000"
+    networks:
+      - mathnet
+    secrets:
+      - source: apm-secret-token
+        target: apm-secret-token
+        mode: 0400
+      - source: apm-server-url
+        target: apm-server-url
+        mode: 0400
+    depends_on:
+      - addition-service
+      - subtraction-service
+      - multiplication-service
+      - division-service
+
+secrets:
+
+  apm-secret-token:
+    external: true
+  apm-server-url:
+    external: true
+
+networks:
+
+  mathnet:
+    driver: overlay

@@ -1,3 +1,7 @@
+# VC Stuff
+.git
+.cache
+
 # IDE Junk
 .idea
 
