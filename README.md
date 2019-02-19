@@ -7,7 +7,7 @@ part of the Docker Desktop for Mac bundle (v2.0.0.3, includes engine=18.09.2, co
 1. Add your secrets. If you don't have APM credentials, head over to cloud.elastic.co and spin
 up a cluster.  
 `printf "<your apm secret token>" | docker secret create apm-secret-token -`  
-`printf "<your apm server url>" | docker secret create apm-secret-token -`
+`printf "<your apm server url>" | docker secret create apm-server-url -`
 
 1. Get the code: `git clone <this repo>`
 
