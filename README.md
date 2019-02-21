@@ -16,7 +16,7 @@ up a cluster.
 1. You'll now have four math services running, and a math UI. Each service accepts two URL
 parameters, `n1` and `n2`, and the response will contain the sum, difference, product, or quotient.
   - http://localhost:5000
-  - http://localhost:5001/add?n1=`number`&n2=`number`
-  - http://localhost:5002/subtract?n1=`number`&n2=`number`
-  - http://localhost:5003/multiply?n1=`number`&n2=`number`
-  - http://localhost:5004/divide?n1=`number`&n2=`number`
+  - http://localhost:5001/add?n1=1&n2=2
+  - http://localhost:5002/subtract?n1=3&n2=4
+  - http://localhost:5003/multiply?n1=5&n2=6
+  - http://localhost:5004/divide?n1=7&n2=8
